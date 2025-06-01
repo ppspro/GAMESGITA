@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamesGita - Ultimate Gaming Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .theme-gradient-1 { background: linear-gradient(135deg, #ff6b6b, #4b79a1); }
+        .theme-gradient-2 { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .theme-gradient-3 { background: linear-gradient(135deg, #5ee7df, #b490ca); }
+        .theme-gradient-4 { background: linear-gradient(135deg, #a1c4fd, #c2e9fb); }
+        .theme-gradient-5 { background: linear-gradient(135deg, #ff9a9e, #fad0c4); }
+        .theme-gradient-6 { background: linear-gradient(135deg, #84fab0, #8fd3f4); }
+        .theme-gradient-7 { background: linear-gradient(135deg, #d4fc79, #96e6a1); }
+        .theme-gradient-8 { background: linear-gradient(135deg, #fa709a, #fee140); }
+        .theme-gradient-9 { background: linear-gradient(135deg, #30cfd0, #330867); }
+        .theme-gradient-10 { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .theme-gradient-11 { background: linear-gradient(135deg, #ff9a8b, #ff6a88); }
+        .theme-gradient-12 { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .theme-gradient-13 { background: linear-gradient(135deg, #e0c3fc, #8ec5fc); }
+        .theme-gradient-14 { background: linear-gradient(135deg, #ff9966, #ff5e62); }
+        .theme-gradient-15 { background: linear-gradient(135deg, #a8edea, #fed6e3); }
+        .theme-gradient-16 { background: linear-gradient(135deg, #f5f7fa, #c3cfe2); }
+        .theme-gradient-17 { background: linear-gradient(135deg, #ff758c, #ff7eb3); }
+        .theme-gradient-18 { background: linear-gradient(135deg, #6a11cb, #2575fc); }
+        .theme-gradient-19 { background: linear-gradient(135deg, #f6d365, #fda085); }
+        .theme-gradient-20 { background: linear-gradient(135deg, #93a5cf, #e4efe9); }
+        .game-title { font-family: 'Orbitron', sans-serif; }
+        .game-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .game-card:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(0,255,255,0.5); }
+        .theme-transition { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="theme-gradient-1 text-white min-h-screen">
+    <header class="container mx-auto py-6">
+        <nav class="flex justify-between items-center">
+            <h1 class="text-4xl game-title text-cyan-300">🎮 GamesGita</h1>
+            <div class="space-x-4">
+                <a href="#login" class="hover:text-cyan-300 transition">Login</a>
+                <a href="#favorites" class="hover:text-cyan-300 transition">Favorites</a>
+                <a href="#recent" class="hover:text-cyan-300 transition">Recently Played</a>
+                <select id="theme-selector" class="bg-gray-800 text-white p-2 rounded">
+                    <option value="theme-gradient-1">Neon Red</option>
+                    <option value="theme-gradient-2">Pink Fusion</option>
+                    <option value="theme-gradient-3">Aqua Purple</option>
+                    <option value="theme-gradient-4">Sky Blue</option>
+                    <option value="theme-gradient-5">Sunset Glow</option>
+                    <option value="theme-gradient-6">Mint Sparkle</option>
+                    <option value="theme-gradient-7">Lime Dream</option>
+                    <option value="theme-gradient-8">Candy Burst</option>
+                    <option value="theme-gradient-9">Ocean Night</option>
+                    <option value="theme-gradient-10">Indigo Wave</option>
+                    <option value="theme-gradient-11">Coral Blaze</option>
+                    <option value="theme-gradient-12">Ocean Breeze</option>
+                    <option value="theme-gradient-13">Lavender Sky</option>
+                    <option value="theme-gradient-14">Sunset Fire</option>
+                    <option value="theme-gradient-15">Pastel Dream</option>
+                    <option value="theme-gradient-16">Silver Mist</option>
+                    <option value="theme-gradient-17">Rose Glow</option>
+                    <option value="theme-gradient-18">Night Spark</option>
+                    <option value="theme-gradient-19">Golden Horizon</option>
+                    <option value="theme-gradient-20">Twilight Haze</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container mx-auto text-center py-12">
+        <h2 class="text-5xl game-title mb-4">Play Amazing Games for Free!</h2>
+        <p class="text-xl mb-8">Discover thousands of games across all genres</p>
+        <button class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-3 px-6 rounded-full transition">Start Playing</button>
+    </section>
+
+    <section class="container mx-auto py-12">
+        <h2 class="text-3xl game-title mb-6">🌟 Featured Game</h2>
+        <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg flex items-center">
+            <img src="https://via.placeholder.com/150?text=Adventure+Quest" alt="Adventure Quest" class="w-32 h-32 rounded mr-4">
+            <div>
+                <h3 class="text-2xl game-title text-cyan-300">Adventure Quest</h3>
+                <div class="flex items-center my-2">
+                    <span class="text-yellow-400">★★★★★</span>
+                    <span class="ml-2">(4.8/5)</span>
+                </div>
+                <p class="mb-4">Embark on an epic adventure in this stunning RPG game. Explore vast worlds, defeat monsters, and collect legendary treasures!</p>
+                <button onclick="launchGame('adventure-quest')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded transition">Play Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto py-12">
+        <h2 class="text-3xl game-title mb-6">All Games</h2>
+        <div class="flex space-x-4 mb-6">
+            <button class="bg-gray-800 hover:bg-gray-700 py-2 px-4 rounded">🕹️ Arcade</button>
+            <button class="bg-gray-800 hover:bg-gray-700 py-2 px-4 rounded">👥 Multiplayer</button>
+            <button class="bg-gray-800 hover:bg-gray-700 py-2 px-4 rounded">🔥 Trending</button>
+            <button class="bg-gray-800 hover:bg-gray-700 py-2 px-4 rounded">🧩 Puzzle</button>
+            <button class="bg-gray-800 hover:bg-gray-700 py-2 px-4 rounded">⚔️ Action</button>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Generated game cards will go here -->
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=3+Jewels" alt="3 Jewels" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">3 Jewels</h3>
+                <p>Match sparkling gems in this exciting puzzle adventure!</p>
+                <button onclick="launchGame('3-jewels')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=100+Meter+Run" alt="100 Meter Run" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">100 Meter Run</h3>
+                <p>Sprint to victory in this thrilling racing challenge!</p>
+                <button onclick="launchGame('100-meter-run')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=360+Maze" alt="360 Maze" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">360 Maze</h3>
+                <p>Navigate through twisting mazes to find the exit!</p>
+                <button onclick="launchGame('360-maze')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=Animal+Cards" alt="Animal Cards" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">Animal Cards</h3>
+                <p>Test your memory with this fun animal card game!</p>
+                <button onclick="launchGame('animal-cards')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=Math+Quiz" alt="Math Quiz" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">Math Quiz</h3>
+                <p>Challenge your brain with exciting math puzzles!</p>
+                <button onclick="launchGame('math-quiz')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=Monster+Cubes" alt="Monster Cubes" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">Monster Cubes</h3>
+                <p>Match monstrous cubes in this thrilling puzzle game!</p>
+                <button onclick="launchGame('monster-cubes')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=Air+Battle" alt="Air Battle" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">Air Battle</h3>
+                <p>Engage in epic aerial combat in this action-packed game!</p>
+                <button onclick="launchGame('air-battle')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=Alien+Match" alt="Alien Match" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">Alien Match</h3>
+                <p>Match alien symbols in this cosmic puzzle adventure!</p>
+                <button onclick="launchGame('alien-match')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=Amazon+War" alt="Amazon War" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">Amazon War</h3>
+                <p>Battle through ancient jungles in this warrior adventure!</p>
+                <button onclick="launchGame('amazon-war')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=Ancient+Target" alt="Ancient Target" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">Ancient Target</h3>
+                <p>Test your archery skills in historical settings!</p>
+                <button onclick="launchGame('ancient-target')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=Angle+Quiz" alt="Angle Quiz" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">Angle Quiz</h3>
+                <p>Solve geometry puzzles in this educational challenge!</p>
+                <button onclick="launchGame('angle-quiz')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=Animal+Coloring" alt="Animal Coloring" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">Animal Coloring</h3>
+                <p>Unleash your creativity with colorful animal designs!</p>
+                <button onclick="launchGame('animal-coloring')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+            <!-- Additional game cards -->
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=Arrow+Dash" alt="Arrow Dash" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">Arrow Dash</h3>
+                <p>Dash through obstacles with precise arrow movements!</p>
+                <button onclick="launchGame('arrow-dash')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=Aztec+Madness" alt="Aztec Madness" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">Aztec Madness</h3>
+                <p>Explore ancient temples and solve mysterious puzzles!</p>
+                <button onclick="launchGame('aztec-madness')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=Bamboo+Ninja" alt="Bamboo Ninja" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">Bamboo Ninja</h3>
+                <p>Master ninja skills in this bamboo forest adventure!</p>
+                <button onclick="launchGame('bamboo-ninja')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=Baseball+Hit" alt="Baseball Hit" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">Baseball Hit</h3>
+                <p>Swing for the fences in this baseball challenge!</p>
+                <button onclick="launchGame('baseball-hit')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+            <!-- Continue adding all remaining games in this format -->
+            <!-- Total of 200+ game cards would be here -->
+        </div>
+        <div class="text-center mt-6">
+            <button class="bg-gray-800 hover:bg-gray-700 py-2 px-4 rounded">Loading more games...</button>
+        </div>
+    </section>
+
+    <section class="container mx-auto py-12">
+        <h2 class="text-3xl game-title mb-6">🎯 Recommended for You</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="game-card bg-gray-900 bg-opacity-80 p-6 rounded-lg">
+                <img src="https://via.placeholder.com/150?text=Recommended+Game" alt="Recommended Game" class="w-full h-32 object-cover rounded mb-2">
+                <h3 class="text-xl game-title text-cyan-300">Recommended Game</h3>
+                <p>Personalized game recommendation</p>
+                <button onclick="launchGame('recommended-game')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded mt-4 transition">Play Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="login" class="container mx-auto py-12">
+        <h2 class="text-3xl game-title mb-6 text-center">Login to GamesGita</h2>
+        <div class="max-w-md mx-auto bg-gray-900 bg-opacity-80 p-8 rounded-lg">
+            <div class="mb-4">
+                <label class="block mb-2">Username</label>
+                <input type="text" class="w-full p-2 bg-gray-800 rounded" placeholder="Enter username">
+            </div>
+            <div class="mb-4">
+                <label class="block mb-2">Password</label>
+                <input type="password" class="w-full p-2 bg-gray-800 rounded" placeholder="Enter password">
+            </div>
+            <button class="w-full bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 rounded transition">Login</button>
+            <p class="mt-4 text-center">Don't have an account? <a href="#signup" class="text-cyan-300">Sign up</a></p>
+        </div>
+    </section>
+
+    <footer class="container mx-auto py-12 text-center">
+        <h3 class="text-2xl game-title mb-4">GamesGita</h3>
+        <p>The ultimate destination for free online games. Play thousands of games across all genres, anytime, anywhere.</p>
+        <div class="flex justify-center space-x-8 mt-4">
+            <div>
+                <h4 class="font-bold">Quick Links</h4>
+                <ul>
+                    <li><a href="#" class="hover:text-cyan-300">About Us</a></li>
+                    <li><a href="#" class="hover:text-cyan-300">Contact</a></li>
+                    <li><a href="#" class="hover:text-cyan-300">Submit Game</a></li>
+                    <li><a href="#" class="hover:text-cyan-300">Developers</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold">Legal</h4>
+                <ul>
+                    <li><a href="#" class="hover:text-cyan-300">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-cyan-300">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-cyan-300">Cookie Policy</a></li>
+                    <li><a href="#" class="hover:text-cyan-300">DMCA</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="mt-8">© 2025 GamesGita. All rights reserved. Made with ❤️ for gamers worldwide.</p>
+    </footer>
+
+    <script>
+        // Theme switcher with cross-dissolve transition
+        const themeSelector = document.getElementById('theme-selector');
+        themeSelector.addEventListener('change', (e) => {
+            document.body.classList.remove('theme-transition');
+            document.body.className = `text-white min-h-screen ${e.target.value}`;
+            setTimeout(() => {
+                document.body.classList.add('theme-transition');
+            }, 10);
+        });
+
+        // Game URLs object
+        const gameUrls = {
+            'adventure-quest': 'https://example.com/games/adventure-quest',
+            '3-jewels': 'https://gp-imports.com/html5/Games/3%20Jewels%20HTML5%20(PAID)%20files/',
+            '100-meter-run': 'https://gp-imports.com/html5/Games/100%20Meter%20Run%20Tournament%20HTML5%20(PAID)%20Files/',
+            '360-maze': 'https://gp-imports.com/html5/Games/360%20Maze%20HTML5%20(PAID)%20files/',
+            'animal-cards': 'https://gp-imports.com/html5/Games/ANIMAL%20CARDS%20-%20BRAIN%20EDITION/',
+            'math-quiz': 'https://gp-imports.com/html5/Games/AWESOME%20MATH%20QUIZ%20HTML5%20(PAID)%20files/',
+            'monster-cubes': 'https://gp-imports.com/html5/Games/AWESOME%20MONSTER%20CUBES%20HTML5%20(PAID)%20FILES/',
+            'air-battle': 'https://gp-imports.com/html5/Games/Air%20Battle%20HTML5%20(PAID)%20files/',
+            'alien-match': 'https://gp-imports.com/html5/Games/Alien%20Match%203%20Rush%20HTML5%20(PAID)%20files/',
+            'amazon-war': 'https://gp-imports.com/html5/Games/Amazon%20War%20Rush%20HTML5%20(PAID)%20files/',
+            'ancient-target': 'https://gp-imports.com/html5/Games/Ancient%20Target%20HTML5%20(PAID)%20files/',
+            'angle-quiz': 'https://gp-imports.com/html5/Games/Angle%20Quiz%20HTML5%20(PAID)%20files/',
+            'animal-coloring': 'https://gp-imports.com/html5/Games/Animal%20Coloring%20PRO%20HTML5%20(PAID)%20files/',
+            'arrow-dash': 'https://gp-imports.com/html5/Games/Arrow%20Dash%20Pro%20HTML5%20(PAID)%20files/',
+            'aztec-madness': 'https://gp-imports.com/html5/Games/Aztec%20Madness%20HTML5%20(PAID)%20files/',
+            'bamboo-ninja': 'https://gp-imports.com/html5/Games/BAMBOO%20NINJA%20HTML5%20(PAID)%20files/',
+            'baseball-hit': 'https://gp-imports.com/html5/Games/Baseball%20Hit%20HTML5%20(PAID)%20files/',
+            // Add all other game URLs here
+            'recommended-game': 'https://example.com/games/recommended-game'
+        };
+
+        // Game launch function
+        function launchGame(gameId) {
+            if (gameUrls[gameId]) {
+                window.open(gameUrls[gameId], '_blank');
+            } else {
+                alert('Game is loading... (Placeholder for actual game launch)');
+            }
+        }
+    </script>
+</body>
+</html>
